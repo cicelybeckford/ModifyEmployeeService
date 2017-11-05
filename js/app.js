@@ -29,16 +29,13 @@
 
     /* ---------------------------------- Local Functions ---------------------------------- */
     function findByName() {
-    	var fnamevalue = $('.search-key-fname').val()
-    	var lnamevalue = $('.search-key-lname').val()
-    	//console.log(searchvalue.length)
+    	var fnamevalue = $('.search-key-fname').val().replace(/\s+/g, '');
+    	var lnamevalue = $('.search-key-lname').val().replace(/\s+/g, '');
     	if (fnamevalue.length >= 2 && lnamevalue.length >= 2 )
     	{
-    		var fullname = fnamevalue + ' ' + lnamevalue
-        service.findByName(fullname).done(function (employees) {
+        service.findByName(fnamevalue, lnamevalue).done(function (employees) {
             var l = employees.length;
             var e;
-            console.log (fullname)
             $('.employee-list').empty();
             for (var i = 0; i < l; i++) {
                 e = employees[i];
