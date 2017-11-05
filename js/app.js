@@ -31,7 +31,7 @@
     function findByName() {
     	var fnamevalue = $('.search-key-fname').val().replace(/\s+/g, '');
     	var lnamevalue = $('.search-key-lname').val().replace(/\s+/g, '');
-    	if (fnamevalue.length >= 2 && lnamevalue.length >= 2 )
+    	if (fnamevalue.length >= 2 || lnamevalue.length >= 2 )
     	{
         service.findByName(fnamevalue, lnamevalue).done(function (employees) {
             var l = employees.length;
