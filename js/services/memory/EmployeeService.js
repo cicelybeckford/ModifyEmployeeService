@@ -21,11 +21,15 @@ var EmployeeService = function() {
         return deferred.promise();
     }
 
-    this.findByName = function(searchKey) {
+    this.findByName = function(firstname, lastname) {
         var deferred = $.Deferred();
         var results = employees.filter(function(element) {
-            var fullName = element.firstName + " " + element.lastName;
-            return fullName.toLowerCase().indexOf(searchKey.toLowerCase()) > -1;
+            var fName = element.firstName 
+            var lName = element.lastName;
+            if (fName.toLowerCase().indexOf(firstname.toLowerCase()) > -1)
+            	return true;
+            if (lName.toLowerCase().indexOf(lastname.toLowerCase()) > -1)
+            	return true;
         });
         deferred.resolve(results);
         return deferred.promise();
