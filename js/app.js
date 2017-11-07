@@ -13,19 +13,6 @@
     $('.help-btn').on('click', function() {
        alert("Employee Directory v3.4");
     });
-    /*document.addEventListener('deviceready', 
-    function () {
-    	if (device.platform != "browser") {
-    		window.alert = function (message) {
-    		navigator.notification.alert(
-    		message,
-    		null,
-    		"Workshop on Android",
-    		'OK'
-    		);
-    	};
-    }
-  }, false);*/
 
     /* ---------------------------------- Local Functions ---------------------------------- */
     function findByName() {
