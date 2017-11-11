@@ -734,6 +734,12 @@ input[type="button"] {
   overflow: hidden;
   border-bottom: 1px solid #ddd;
 }
+.table-view-cell:nth-child(odd){
+  background-color: #FFF5EE;
+}
+.table-view-cell:nth-child(even){
+  background-color: #FFE4E1;
+}
 .table-view-cell:last-child {
   border-bottom: 0;
 }
