@@ -21,19 +21,31 @@
 
 <script id="employee-list-tpl" type="text/template">
 	<div class = "search-message"></div>
-	<ul id = "list" class="table-view">
+	<table id = "table" class="table-view">
+		<tr class="table-view-cell media">
+  		  <td class="table-view-cell"></td>
+				<td class="table-view-cell">Title</td>
+				<td class="table-view-cell">Last Name</td>
+				<td class="table-view-cell">First Name</td>
+		</tr>
 		{{#each this}}
-		<li class="table-view-cell media">
-		<a href="#employees/{{ id }}">
-			<img class="media-object pull-left" src="assets/pics/{{pic}}">
-			<div class="media-body">
-				{{firstName}} {{lastName}}
-				<p>{{title}}</p>
-			</div>
-		</a>
-		</li>
+		<tr class="table-view-cell media">
+  		  <a href="#employees/{{ id }}"></a>
+  		  <td class="table-view-cell">
+				 <img class="media-object pull-left" src="assets/pics/{{pic}}">
+				</td>
+				<td class="table-view-cell media-body">
+	          {{title}}
+				</td>
+				<td class="table-view-cell media-body">
+					  {{lastName}}
+				</td>
+				<td class="table-view-cell media-body">
+					  {{firstName}}
+				</td>
+		</tr>
 		{{/each}}
-	</ul>
+	</table>
 </script>
 
 <script src="lib/handlebars.js"></script>

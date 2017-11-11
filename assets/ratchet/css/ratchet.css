@@ -719,6 +719,8 @@ input[type="button"] {
 }
 
 .table-view {
+	table-layout: fixed;
+	width: 100%;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 15px;
@@ -727,21 +729,24 @@ input[type="button"] {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-
-.table-view-cell {
-  position: relative;
-  padding: 11px 65px 11px 15px;
-  overflow: hidden;
-  border-bottom: 1px solid #ddd;
+.table-view tr:first-child{
+  font-weight:700;
+  font-size:16px;
 }
-.table-view-cell:nth-child(odd){
+.table-view tr:nth-child(odd){
   background-color: #FFF5EE;
 }
-.table-view-cell:nth-child(even){
+.table-view tr:nth-child(even){
   background-color: #FFE4E1;
 }
-.table-view-cell:last-child {
-  border-bottom: 0;
+
+.table-view-cell {
+	text-align: center;
+  position: relative;
+  padding: 11px;
+  overflow: hidden;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 .table-view-cell > a:not(.btn) {
   position: relative;

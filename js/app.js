@@ -30,12 +30,16 @@
     	{
         service.findByName(fnamevalue, lnamevalue).done(function (employees) {
             $('.content').html(employeeListTpl(employees));
-            if ($('#list li').length == 0)
+            var tableLength = $('#table tr').length - 1;
+            if (tableLength == 0)
+            {
             	$('.search-message').text("No employees were found");
-            else if ($('#list li').length == 1)
-            	$('.search-message').text($('#list li').length + " employee was found");
+            	$('#table').empty();
+            }
+            else if (tableLength == 1)
+            	$('.search-message').text(tableLength + " employee was found");
             else
-            	$('.search-message').text($('#list li').length + " employees were found");
+            	$('.search-message').text(tableLength + " employees were found");
         });
       }
       else 
