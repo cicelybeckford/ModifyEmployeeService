@@ -16,8 +16,8 @@
 
     /* ---------------------------------- Local Functions ---------------------------------- */
     function findByName() {
-    	var fnamevalue = $('.search-key-fname').val().replace(/\s+/g, '');
-    	var lnamevalue = $('.search-key-lname').val().replace(/\s+/g, '');
+    	var fnamevalue = $('.search-key-fname').val().trim();
+    	var lnamevalue = $('.search-key-lname').val().trim();
     	if (fnamevalue.length >= 2 || lnamevalue.length >= 2 )
     	{
         service.findByName(fnamevalue, lnamevalue).done(function (employees) {

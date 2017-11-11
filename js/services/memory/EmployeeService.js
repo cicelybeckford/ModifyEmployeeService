@@ -26,7 +26,7 @@ var EmployeeService = function() {
         var results = employees.filter(function(element) {
             var fName = element.firstName; 
             var lName = element.lastName;
-            if ((fName.toLowerCase().indexOf(firstname) > -1) && (lName.toLowerCase().indexOf(lastname) > -1))
+            if ((fName.toLowerCase().indexOf(firstname.toLowerCase()) > -1) && (lName.toLowerCase().indexOf(lastname.toLowerCase()) > -1))
             	return true;
         });
         deferred.resolve(results);
