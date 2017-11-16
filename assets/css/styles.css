@@ -5,6 +5,7 @@ ul {
 .search-message {
 	  margin-left: 14px;
 	  margin-bottom: 6px;
+      margin-top: 7px;
 }
 
 .content {
@@ -15,6 +16,7 @@ ul {
     margin-top: 6px;
     height: 31px;
     width: 49.8%;
+    float: left;
 }
 
 .table-view {
