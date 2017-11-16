@@ -745,8 +745,6 @@ input[type="button"] {
   position: relative;
   padding: 11px;
   overflow: hidden;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
 }
 .table-view-cell > a:not(.btn) {
   position: relative;
