@@ -32,6 +32,18 @@ var EmployeeService = function() {
         deferred.resolve(results);
         return deferred.promise();
     }
+	
+    this.findByDep = function(Department, Title) {
+        var deferred = $.Deferred();
+        var results = employees.filter(function(element) {
+            var depVal = element.department; 
+            var titleVal = element.title;
+            if ((depVal.toLowerCase().indexOf(Department.toLowerCase()) > -1) && (titleVal.toLowerCase().indexOf(Title.toLowerCase()) > -1))
+            	return true;
+        });
+        deferred.resolve(results);
+        return deferred.promise();
+    }
 
     var employees = [
         {"id": 1, "firstName": "James", "lastName": "King", "managerId": 0, "managerName": "", "title": "President and CEO", "department": "Corporate", "cellPhone": "617-000-0001", "officePhone": "781-000-0001", "email": "jking@fakemail.com", "city": "Boston, MA", "pic": "James_King.jpg", "twitterId": "@fakejking", "blog": "http://coenraets.org"},
