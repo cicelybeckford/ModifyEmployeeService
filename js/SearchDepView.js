@@ -10,7 +10,7 @@ var SearchDepView = function (service) {
     this.initialize();
     this.render = function() {
         this.$el.html(this.template());
-        $('.content', this.$el).empty();
+        $('.content', this.$el).html();
         return this;
     };
     function findByDep() {

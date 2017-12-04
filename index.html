@@ -20,7 +20,10 @@
 
 <script id="search-name-tpl" type="text/template">
 	<header class="bar bar-nav">
-		<h1 class="title">Directory</h1>
+        <a class="btn btn-link btn-nav pull-left" href="#">
+            <span class="icon icon-left-nav"></span>
+        </a>
+		<h1 class="title">Search By Name</h1>
 	</header>
 	<div class="bar bar-standard bar-header-secondary">
 		<input class='search-key-fname' type="search" placeholder="Enter first name"/>
@@ -31,7 +34,10 @@
 
 <script id="search-dep-tpl" type="text/template">
 	<header class="bar bar-nav">
-		<h1 class="title">Directory</h1>
+        <a class="btn btn-link btn-nav pull-left" href="#">
+            <span class="icon icon-left-nav"></span>
+        </a>
+		<h1 class="title">Search By Department/Title</h1>
 	</header>
 	<div class="bar bar-standard bar-header-secondary">
 		<input class='search-key-dep' type="search" placeholder="Enter Department"/>
@@ -46,23 +52,31 @@
 		<tr class="table-view-cell media">
   		    <td class="table-view-cell"></td>
 			<td class="table-view-cell">Title</td>
+			<td class="table-view-cell">Department</td>
 			<td class="table-view-cell">Last Name</td>
 			<td class="table-view-cell">First Name</td>
 		</tr>
 		{{#each this}}
 		<tr class="table-view-cell media">
-  			<a href="#employees/{{ id }}"></a>
   		  	<td class="table-view-cell">
 				<img class="media-object pull-left" src="assets/pics/{{pic}}">
+				<a href="#employees/{{ id }}"></a>
 		  	</td>
 		  	<td class="table-view-cell media-body">
 	        	{{title}}
+				<a href="#employees/{{ id }}"></a>
+		  	</td>
+		  	<td class="table-view-cell media-body">
+	        	{{department}}
+				<a href="#employees/{{ id }}"></a>
 		  	</td>
 		  	<td class="table-view-cell media-body">
 				{{lastName}}
+				<a href="#employees/{{ id }}"></a>
 		  	</td>
 		  	<td class="table-view-cell media-body">
 				{{firstName}}
+				<a href="#employees/{{ id }}"></a>
 		  	</td>
 		</tr>
 		{{/each}}
@@ -125,7 +139,7 @@
               </ul>
           </div>
       </div>
-</script>
+  </script>
   
 <script src="js/EmployeeListView.js"></script>
 <script src="js/SearchNameView.js"></script>
