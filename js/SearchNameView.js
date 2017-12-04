@@ -3,13 +3,14 @@ var SearchNameView = function (service) {
     this.initialize = function () {
         // Define a div wrapper for the view (used to attach events)
         this.$el = $('<div/>');
-        this.$el.on('keyup', '.search-key', findByName);
+        this.$el.on('keyup', '.search-key-fname', findByName);
+		this.$el.on('keyup', '.search-key-lname', findByName)
         employeeListView = new EmployeeListView();
     };
     this.initialize();
     this.render = function() {
         this.$el.html(this.template());
-        $('.content', this.$el).html(employeeListView.$el);
+        $('.content', this.$el).html();
         return this;
     };
     function findByName() {
@@ -18,6 +19,7 @@ var SearchNameView = function (service) {
     	if (fnamevalue.length >= 2 || lnamevalue.length >= 2 )
     	{
         service.findByName(fnamevalue, lnamevalue).done(function (employees) {
+		    $('.content', this.$el).html(employeeListView.$el);
             employeeListView.setEmployees(employees);
             var tableLength = $('#table tr').length - 1;
             if (tableLength == 0)
@@ -32,6 +34,6 @@ var SearchNameView = function (service) {
         });
       }
       else 
-      	 $('.content').empty();
+      	 $('.content', this.$el).empty(); 
     }
 }

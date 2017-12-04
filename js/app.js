@@ -12,7 +12,7 @@
     /* ---------------------------------- Local Variables ---------------------------------- */
     var service = new EmployeeService();
     service.initialize().done(function () {
-		router.addRoute('Home', function() {
+		router.addRoute('', function() {
 			$('body').html(new HomeView(service).render().$el);
 		});
 		router.addRoute('SearchName', function() {

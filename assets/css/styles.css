@@ -12,13 +12,6 @@ ul {
     position: absolute;
 }
 
-#choicebutton {
-	margin-top: 50px;
-	margin-left: 20px;
-	float:  left;
-}
-
-
 .bar-header-secondary>input {
     margin-top: 6px;
     height: 31px;

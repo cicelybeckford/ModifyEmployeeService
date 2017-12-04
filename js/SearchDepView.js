@@ -3,13 +3,14 @@ var SearchDepView = function (service) {
     this.initialize = function () {
         // Define a div wrapper for the view (used to attach events)
         this.$el = $('<div/>');
-        this.$el.on('keyup', '.search-key', findByDep);
+        this.$el.on('keyup', '.search-key-dep', findByDep);
+		this.$el.on('keyup', '.search-key-title', findByDep);
         employeeListView = new EmployeeListView();
     };
     this.initialize();
     this.render = function() {
         this.$el.html(this.template());
-        $('.content', this.$el).html(employeeListView.$el);
+        $('.content', this.$el).empty();
         return this;
     };
     function findByDep() {
@@ -17,11 +18,13 @@ var SearchDepView = function (service) {
     	var titlevalue = $('.search-key-title').val().trim();
     	if (depvalue.length >= 2 || titlevalue.length >= 2 )
     	{
-        service.findByDep(depvalue, titlevalue).done(function (employees) {
+        	service.findByDep(depvalue, titlevalue).done(function (employees) {
+			$('.content', this.$el).html(employeeListView.$el);
             employeeListView.setEmployees(employees);
             var tableLength = $('#table tr').length - 1;
             if (tableLength == 0)
             {
+				console.log(tableLength);
             	$('.search-message').text("No employees were found");
             	$('#table').empty();
             }
@@ -32,6 +35,6 @@ var SearchDepView = function (service) {
         });
       }
       else 
-      	 $('.content').empty();
+      	$('.content', this.$el).empty();
     }
 }
