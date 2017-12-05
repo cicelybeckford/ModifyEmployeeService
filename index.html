@@ -48,39 +48,20 @@
 
 <script id="employee-list-tpl" type="text/template">
 	<div class = "search-message"></div>
-	<table id = "table" class="table-view">
-		<tr class="table-view-cell media">
-  		    <td class="table-view-cell"></td>
-			<td class="table-view-cell">Title</td>
-			<td class="table-view-cell">Department</td>
-			<td class="table-view-cell">Last Name</td>
-			<td class="table-view-cell">First Name</td>
-		</tr>
-		{{#each this}}
-		<tr class="table-view-cell media">
-  		  	<td class="table-view-cell">
-				<img class="media-object pull-left" src="assets/pics/{{pic}}">
-				<a href="#employees/{{ id }}"></a>
-		  	</td>
-		  	<td class="table-view-cell media-body">
-	        	{{title}}
-				<a href="#employees/{{ id }}"></a>
-		  	</td>
-		  	<td class="table-view-cell media-body">
-	        	{{department}}
-				<a href="#employees/{{ id }}"></a>
-		  	</td>
-		  	<td class="table-view-cell media-body">
-				{{lastName}}
-				<a href="#employees/{{ id }}"></a>
-		  	</td>
-		  	<td class="table-view-cell media-body">
-				{{firstName}}
-				<a href="#employees/{{ id }}"></a>
-		  	</td>
-		</tr>
-		{{/each}}
-	</table>
+    <ul id = "list" class="table-view">
+    {{#each this}}
+    	<li class="table-view-cell media">
+    		<a href="#employees/{{ id }}">
+    			<img class="media-object pull-left" src="assets/pics/{{pic}}">
+    			<div class="media-body">
+    				{{firstName}} {{lastName}}
+    				<p>{{title}}</p>
+					<p>{{department}}</p>
+    			</div>
+    		</a>
+    	</li>
+    {{/each}}
+    </ul>
 </script>
 
 <script id="employee-tpl" type="text/template">

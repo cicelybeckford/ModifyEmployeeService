@@ -21,16 +21,17 @@ var SearchNameView = function (service) {
         service.findByName(fnamevalue, lnamevalue).done(function (employees) {
 		    $('.content', this.$el).html(employeeListView.$el);
             employeeListView.setEmployees(employees);
-            var tableLength = $('#table tr').length - 1;
-            if (tableLength == 0)
+            var listLength = $('#list li').length;
+            if (listLength == 0)
             {
+				console.log(listLength);
             	$('.search-message').text("No employees were found");
-            	$('#table').empty();
+            	$('#list').empty();
             }
-            else if (tableLength == 1)
-            	$('.search-message').text(tableLength + " employee was found");
+            else if (listLength == 1)
+            	$('.search-message').text(listLength + " employee was found");
             else
-            	$('.search-message').text(tableLength + " employees were found");
+            	$('.search-message').text(listLength + " employees were found");
         });
       }
       else 
